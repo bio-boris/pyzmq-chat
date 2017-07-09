@@ -9,4 +9,4 @@ This uses the REQUEST/REPLY messaging pattern with pyZMQ.
 The client uses the main thread to send messages, and runs request messages on a seperate thread. 
 
 
-# Future Ideas: Serve this chatroom with Tornado
+Future Ideas: Serve this chatroom with Tornado
