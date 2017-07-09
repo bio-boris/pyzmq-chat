@@ -11,7 +11,7 @@ messages = []
 """
 {'type': 'count'}
 {'type': 'fetch', 'from': 10}
-{'type': 'post', 'message': 'Hi Boris'}
+{'type': 'post', 'message': 'Hi Boris', 'user': 'username'}
 """
 
 
@@ -26,7 +26,7 @@ def handle(msg):
 	elif data_type == 'fetch':
 		result = {'messages': messages[data['from']:]}
 	elif data_type =='post':
-		messages.append(data['msg'])
+		messages.append( (data['msg'],data['user']))
 		result = {'count': len(messages)}
 	if result:
 		return json.dumps(result)
